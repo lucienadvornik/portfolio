@@ -1,5 +1,10 @@
-h1 {
-    color: black;
-    background-color:white
-  }
-  
+html {
+  color: white;
+  background-color:black
+}
+
+
+
+#gray {
+  color: lightgray;
+}
