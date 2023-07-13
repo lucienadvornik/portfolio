@@ -6,6 +6,14 @@ html {
 body {  
   font-family: arial;
 }
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 28px;
+}
 #gray {
   color: lightgray;
 }
