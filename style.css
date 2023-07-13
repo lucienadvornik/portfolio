@@ -24,7 +24,7 @@ h2 {
   justify-content: center;
   align-items: flex-start;
   height: 70vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
-  padding-left: 50px; /* Přidáme 50px odsazení zleva */
+  padding-left: 120px; /* Přidáme 50px odsazení zleva */
 
 }
 
