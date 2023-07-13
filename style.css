@@ -2,6 +2,10 @@ html {
   color: white;
   background-color:black
 }
+head {
+  height: 70vh;
+}
+
 
 body {  
   font-family: arial;
@@ -14,8 +18,16 @@ h1 {
 h2 {
   font-size: 28px;
 }
+
+p {
+  color: gray;  
+  font-size: 20px;
+  font-weight:lighter;
+}
+
+
 #gray {
-  color: lightgray;
+  color: rgb(160, 160, 160);
 }
 
 .sloupec {
