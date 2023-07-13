@@ -3,8 +3,21 @@ html {
   background-color:black
 }
 
+body {  
+  font-family: arial;
+}
 #gray {
   color: lightgray;
+}
+
+.sloupec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 70vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
+  padding-left: 50px; /* Přidáme 50px odsazení zleva */
+
 }
 
 ul {
@@ -13,7 +26,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #00000;
-  font-family: monospace;
+  font-family: arial;
 }
 
 li {
