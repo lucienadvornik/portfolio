@@ -35,11 +35,19 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 70vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
+  height: 58vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
   padding-left: 120px; /* Přidáme 50px odsazení zleva */
 
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 120px; /* Přidáme 50px odsazení zleva */
+
+}
 ul {
   list-style-type: none;
   margin: 0;
