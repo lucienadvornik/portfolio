@@ -35,7 +35,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 70vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
+  height: 76vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
   padding-left: 120px; /* Přidáme 50px odsazení zleva */
 }
 
