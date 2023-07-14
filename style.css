@@ -2,10 +2,10 @@ html {
   color: white;
   background-color:black
 }
+
 head {
   height: 70vh;
 }
-
 
 body {  
   font-family: arial;
@@ -25,9 +25,17 @@ p {
   font-weight:lighter;
 }
 
-
 #gray {
   color: rgb(160, 160, 160);
+}
+
+.sloupec_home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 80vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
+  padding-left: 120px; /* Přidáme 50px odsazení zleva */
 }
 
 .sloupec {
