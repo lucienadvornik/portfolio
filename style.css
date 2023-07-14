@@ -60,7 +60,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: start; /* Zarovnání textu nahoru */
-  height: 40vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
+  height: 50vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
   padding-left: 120px; /* Přidáme 50px odsazení zleva */
 }
 .body {
