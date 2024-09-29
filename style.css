@@ -133,3 +133,17 @@ a:hover {
 a:hover {
   color: #e777e2; /* Baby blue text po přejetí myší */
 }
+
+.tech-item {
+  display: inline-block; /* Zajistí, že prvek bude mít okolo sebe mezery */
+  padding: 10px 20px; /* Vytvoří vnitřní odsazení, aby text byl uvnitř oválu */
+  border: 2px solid white; /* Bílý ohraničení */
+  border-radius: 50px; /* Oválný tvar */
+  background-color: transparent; /* Průhledné pozadí */
+  color: #bc8fe2; /* Barva textu */
+  font-size: 16px; /* Velikost textu */
+  margin: 10px; /* Mezera mezi jednotlivými ovály */
+
+}
+
+
