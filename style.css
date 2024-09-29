@@ -7,12 +7,8 @@ head {
   height: 70vh;
 }
 
-body {  
-  font-family: arial;
-  height: 1OOvh;
-}
-
 body {
+  font-family: arial;
   background-image: url('assets/background_30.png'); /* Odkaz na obrázek */
   background-size: cover; /* Aby se obrázek roztáhl na celé pozadí */
   background-position: center 100px; /* Centrovat obrázek horizontálně a posunout o 100px dolů */
