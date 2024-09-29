@@ -85,6 +85,7 @@ p {
   padding-left: 120px; /* Přidáme 50px odsazení zleva */
 
 }
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -114,22 +115,16 @@ li a:hover {
   border-radius: 15px;
 }
 
-b {
+a {
   color: lightgray; /* Světle šedý text */
-  text-decoration: none; /* Odstraní podtržení textu */
-  padding: 10px 20px; /* Vnitřní odsazení pro vytvoření většího prostoru uvnitř oválu */
-  border: 2px solid white; /* Bílé ohraničení */
-  border-radius: 50px; /* Oválný tvar */
-  background-color: transparent; /* Průhledné pozadí */
   margin-right: 20px; /* Mezery mezi odkazy */
-  transition: background-color 0.3s ease; /* Plynulý přechod pozadí */
+
 }
 
-b:hover {
-  background-color: rgb(79, 78, 78); /* Tmavě šedé pozadí po přejetí myší */
+a:hover {
   color: black; /* Může být přidána i změna barvy textu po přejetí myší */
 }
 
-b:hover {
+a:hover {
   color: #89CFF0; /* Baby blue text po přejetí myší */
 }
