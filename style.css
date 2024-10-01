@@ -15,6 +15,7 @@ body {
   background-repeat: no-repeat; /* Zamezit opakování obrázku */
   height: 100vh; /* Nastavení výšky na 100% výšky viewportu */
   margin: 0; /* Odstranit výchozí okraje */
+  background-attachment: fixed;
 }
 
 h1 {
