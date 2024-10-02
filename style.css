@@ -1,149 +1,250 @@
+/* Základní nastavení pro tělo stránky */
 html {
   color: white;
-  background-color:black
-}
- 
-head {
-  height: 70vh;
+  background-color: black;
 }
 
 body {
-  font-family: arial;
+  font-family: Arial, sans-serif;
   background-image: url('assets/background_30.png'); /* Odkaz na obrázek */
   background-size: cover; /* Aby se obrázek roztáhl na celé pozadí */
   background-position: center 100px; /* Centrovat obrázek horizontálně a posunout o 100px dolů */
   background-repeat: no-repeat; /* Zamezit opakování obrázku */
   height: 100vh; /* Nastavení výšky na 100% výšky viewportu */
   margin: 0; /* Odstranit výchozí okraje */
-  background-attachment: fixed;
+  padding-left: 140px; /* Globální přirozené odsazení zleva */
+  padding-right: 20px; /* Globální odsazení zprava */
+  background-attachment: fixed; /* Pozadí zůstane pevné při skrolování */
 }
 
+/* Titulky */
 h1 {
   font-size: 60px;
+  margin-bottom: 20px;
 }
 
 h2 {
   font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* Nastavení barvy textu pro specifické sekce */
+.intro h2 {
+  color: lightgray; /* Barva pro "Data Engineer at IBM..." */
+}
+
+.experience h2 {
+  color: lightgray; /* Barva pro "I had a chance to work with..." */
 }
 
 p {
   color: gray;  
   font-size: 20px;
-  font-weight:lighter;
+  font-weight: lighter;
+  line-height: 1.6; /* Lepší čitelnost textu */
 }
 
-#gray {
-  color: rgb(160, 160, 160);
+/* Logo - zmenšeno o 50 % */
+.logo {
+  height: 48px; /* Nastavená výška loga na 50px */
 }
 
-#white {
-  color: rgb(255, 255, 255);
-}
-.sloupec_home {
+/* Navigační menu - zarovnáno vpravo a logo správně zarovnáno vertikálně */
+.navbar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 76vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
-  padding-left: 120px; /* Přidáme 50px odsazení zleva */
+  justify-content: space-between; /* Zajistí logo vlevo a menu vpravo */
+  align-items: center; /* Vertikální zarovnání položek */
+  padding: 20px; /* Prostor kolem navigačního baru */
 }
 
-.sloupec {
+.nav-links {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 96vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
-  padding-left: 120px; /* Přidáme 50px odsazení zleva */
+  list-style: none;
+  align-items: center; /* Zarovná odkazy vertikálně s logem */
 }
 
-.sloupec2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 50vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
-  padding-left: 120px; /* Přidáme 50px odsazení zleva */
-}
-.sloupec3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start; /* Zarovnání textu nahoru */
-  height: 62vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
-  padding-left: 120px; /* Přidáme 50px odsazení zleva */
-}
-.body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 36vh; /* Nastavte výšku sloupce na výšku obrazovky (viewport height) */
-  padding-left: 120px; /* Přidáme 50px odsazení zleva */
-
+.nav-links li {
+  margin-left: 20px; /* Mezera mezi odkazy v menu */
 }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 120px; /* Přidáme 50px odsazení zleva */
-  padding-bottom: 120px;
-
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #00000;
-  font-family: helvetica;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+.nav-links a {
   text-decoration: none;
+  color: lightgray;
+  font-size: 18px;
 }
 
-
-
-.pics {
-  border-radius: 15px;
+.nav-links a:hover {
+  color: #e777e2; /* Barva při přejetí myší */
 }
- 
-a {
-  color: lightgray; /* Světle šedý text */
+
+/* Tech Stack - zaoblené ohraničení kolem technologií */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Mezery mezi technologiemi */
+  margin-top: 20px;
+}
+
+.tech-stack span {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid gray;
+  border-radius: 50px; /* Zaoblené hrany */
+  background-color: transparent;
+  color: #bc8fe2; /* Fialová barva textu */
+  font-size: 16px;
+}
+
+/* Zarovnání sekce s logy na střed */
+.companies {
+  display: flex;
+  justify-content: center; /* Zarovná loga na střed */
+  align-items: center;
+  gap: 20px; /* Mezera mezi logy */
+  margin-top: 20px;
+}
+/* Odkazy na technologie (AWS, SQL, R, ...) */
+header h2 a {
+  color: gray; /* Fialová barva textu */
+  text-decoration: underline;
   margin-right: 20px; /* Mezery mezi odkazy */
 
 }
 
-a:hover {
-  color: black; /* Může být přidána i změna barvy textu po přejetí myší */
-} 
-
-a:hover {
-  color: #e777e2; /* Baby blue text po přejetí myší */
+header h2 a:hover {
+  color: #bc8fe2; /* Změna barvy při přejetí myší */
+  
 }
 
-.tech-item {
-  display: inline-block; /* Zajistí, že prvek bude mít okolo sebe mezery */
-  padding: 10px 20px; /* Vytvoří vnitřní odsazení, aby text byl uvnitř oválu */
-  border: 1px solid gray; /* Bílý ohraničení */
-  border-radius: 50px; /* Oválný tvar */
-  background-color: transparent; /* Průhledné pozadí */
-  color: #bc8fe2; /* Barva textu */
-  font-size: 16px; /* Velikost textu */
-  margin: 10px; /* Mezera mezi jednotlivými ovály */
+/* Responsivní nastavení pro menší zařízení */
+@media (max-width: 360px) {
+  body {
+    padding-left: 30px; /* Zvětšené odsazení zleva na mobilních zařízeních */
+    padding-right: 20px; /* Odsazení zprava zůstává stejné */
+  }
 
+  .navbar {
+    flex-direction: row; /* Zachovat logo vlevo a odkazy vedle něj */
+    justify-content: space-between;
+    align-items: center; /* Udržet vertikální zarovnání prvků */
+  }
+
+  .nav-links {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin-left: 10px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  /* Úprava log sociálních sítí na mobilních zařízeních */
+  .social-links {
+    gap: 20px; /* Zmenšená mezera mezi logy na menších zařízeních */
+  }
+
+  /* Úprava log firem - zarovnání do dvojic a zmenšení na 65% */
+  .companies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dvě loga vedle sebe */
+    gap: 10px; /* Menší mezery mezi logy */
+  }
+
+  .companies img {
+    transform: scale(0.45); /* Zmenšení log na 65 % původní velikosti */
+    transform-origin: center; /* Zachování správného poměru a umístění */
+  }
 }
 
 
+
+/* Footer */
+footer {
+  text-align: left; /* Zarovnání textu vlevo */
+  padding-left: 0px; /* Odsazení zleva, aby odpovídalo zbytku stránky */
+}
+
+/* Sociální odkazy ve footeru */
+.social-links {
+  display: flex;
+  justify-content: flex-start; /* Zarovnání log sociálních sítí vlevo */
+  gap: 40px; /* Větší mezera mezi logy sociálních sítí */
+  margin-top: 25px;
+}
+
+.social-links img {
+  height: 48px; /* Nastavení velikosti obrázků */
+}
+
+/* Speciální úpravy pro mobilní zařízení (max-width: 480px) */
+@media (max-width: 480px) {
+  body {
+    padding-left: 20px;  /* Minimalizované okraje na malých obrazovkách */
+    padding-right: 5px;
+  }
+
+  .navbar {
+    flex-direction: row; /* Logo zůstává vlevo, menu vedle něj */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    height: 40px; /* Zmenšené logo na mobilech */
+  }
+
+  .nav-links {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin-left: 10px; /* Menší mezery mezi odkazy */
+  }
+
+  h1 {
+    font-size: 32px; /* Zmenšení titulků pro mobil */
+  }
+
+  h2 {
+    font-size: 18px; /* Zmenšení podtitulků pro mobil */
+  }
+
+  p {
+    font-size: 14px; /* Zmenšený text pro mobilní čtení */
+  }
+
+  .companies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dvě loga vedle sebe na malých zařízeních */
+    gap: 6px; /* Menší mezery mezi logy na malých obrazovkách */
+  }
+
+  .tech-stack {
+    justify-content: center;
+    margin-bottom: 20px; /* Menší mezera pod technologií */
+  }
+
+  footer {
+    padding-left: 0px; /* Minimální odsazení pro mobil */
+  }
+
+  .social-links {
+    flex-direction: row; /* Ikony sociálních sítí zarovnané vedle sebe */
+    justify-content: flex-start;
+    gap: 15px; /* Zmenšené mezery mezi logy sociálních sítí */
+  }
+}
