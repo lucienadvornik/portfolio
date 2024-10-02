@@ -101,7 +101,7 @@ p {
   justify-content: center; /* Zarovná loga na střed */
   align-items: center;
   gap: 20px; /* Mezera mezi logy */
-  margin-top: 20px;
+  margin-top: 20px; 
 }
 /* Odkazy na technologie (AWS, SQL, R, ...) */
 header h2 a {
