@@ -46,7 +46,8 @@ p {
 
 /* Logo - zmenšeno o 50 % */
 .logo {
-  height: 48px; /* Nastavená výška loga na 50px */
+  height: 68px; /* Nastavená výška loga na 50px */
+  margin-left: -33px;
 }
 
 /* Navigační menu - zarovnáno vpravo a logo správně zarovnáno vertikálně */
