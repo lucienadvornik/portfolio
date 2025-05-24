@@ -249,3 +249,26 @@ footer {
     gap: 15px; /* Zmenšené mezery mezi logy sociálních sítí */
   }
 }
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.intro-photo {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-photo {
+  max-width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
