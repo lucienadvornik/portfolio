@@ -23,7 +23,7 @@
   <!-- Menu -->
   <header>
     <nav class="navbar">
-      <a href="https://lucienadvornik.com/"><img src="../assets/logo-lucie.png" alt="logo-lucie" class="logo"></a>
+      <a href="https://lucienadvornik.com/"><img src="../assets/lucienadvornik.png" alt="logo-lucie" class="logo"></a>
       <ul class="nav-links">
         <li><a href="./index.html">about</a></li>
        
@@ -37,35 +37,106 @@
     <div class="intro-container">
       <!-- Levá strana: text -->
       <div class="intro-text">
-        <h1>Hi, <br> I'm Lucie Nadvornik</h1>
-        <h2>Data Engineer at IBM and University Data lecturer</h2>
+        <h1>Hi, I'm <br>LUCIE NADVORNIK</h1>
+        <h2>DATA ENGINEER</h2>
         <p>
-          + Over 5 years working with data & over 2 years focused on AWS<br>
-          + Master's Degree (Ing.), MBA & AWS Certified
         </p>
       </div>
   
-      <!-- Pravá strana: fotka -->
-      <div class="intro-photo">
-        <img src="../assets/lucienadvornik.jpg" alt="Lucie Nádvorník" class="profile-photo">
+      <!-- Pravá strana: Přepínatelné okno s kódem -->
+      <div class="intro-code">
+        <div class="code-tabs">
+          <div class="tab-buttons">
+            <button onclick="showTab('sql')" class="active">SQL</button>
+            <button onclick="showTab('python')">Python</button>
+          </div>
+          <div class="code-content-wrapper">
+            <div id="sql" class="code-content active">
+  SELECT data_engineer
+  FROM all
+  WHERE cloud = 'AWS' 
+  ORDER BY results DESC;
+            </div>
+            <div id="python" class="code-content">
+  import pandas as pd
+  
+  df = pd.read_csv("all.csv")  
+  data_engineers = df[df['cloud'] == 'AWS']
+  data_engineers_sorted = data_engineers.sort_values(by='results', ascending=False)
+  result = data_engineers_sorted[['data_engineer']]
+  
+  print(result)
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </br></br></br>
-  <h2>Tech stack</h2>
-    <div class="tech-stack">
-      <span>SQL</span>
-      <span>R</span>
-      <span>Python</span>
-      <span>JSON</span>
-      <span>YAML</span>
-      <span>AWS</span>
-    </div>
   </section>
+  
+  
+  <!-- 💡 Styl přepínače -->
+  <style>
+    .code-tabs {
+      margin: 2rem 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      font-family: monospace;
+    }
+  
+    .tab-buttons {
+      display: flex;
+      background: #f3f3f3;
+    }
+  
+    .tab-buttons button {
+      flex: 1;
+      padding: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  
+    .tab-buttons button.active {
+      background: #ddd;
+    }
+  
+    .code-content {
+      padding: 1rem;
+      background: #272822;
+      color: #f8f8f2;
+      display: none;
+      white-space: pre-wrap;
+      font-size: 14px;
+    }
+  
+    .code-content.active {
+      display: block;
+    }
+  </style>
+  
+
+  
+  <!--  JavaScript pro přepínání -->
+  <script>
+    function showTab(tabName) {
+      const buttons = document.querySelectorAll('.tab-buttons button');
+      const contents = document.querySelectorAll('.code-content');
+  
+      buttons.forEach(btn => btn.classList.remove('active'));
+      contents.forEach(el => el.classList.remove('active'));
+  
+      document.querySelector(`.tab-buttons button[onclick*="${tabName}"]`).classList.add('active');
+      document.getElementById(tabName).classList.add('active');
+    }
+  </script>
+  
   </br></br></br></br></br></br></br></br></br></br></br>
   
   <!-- Work experience section -->
-  <section class="experience">
-    <h2>I had a chance to work for</h2>
+  <section class="headlines">
+    <h2>Trusted by companies like</h2>
     <div class="companies">
       <img src="../assets/logo-ibm.png" alt="IBM" height="100">
       <img src="../assets/logo-amazon.png" alt="Amazon" height="100">
