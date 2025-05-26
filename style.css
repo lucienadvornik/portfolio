@@ -647,7 +647,7 @@ footer {
   color: #000 !important; /* růžová barva textu s důrazem */
   font-weight: normal;
   font-size: 14px;
-  border: 3px solid #ffffff66; /* jemná bílá linka */
+  border: px solid #ffffff66; /* jemná bílá linka */
   border-radius: 40px;
   cursor: pointer;
   text-align: center;
@@ -1138,4 +1138,12 @@ footer {
   border-radius: 12px;
   margin-bottom: 16px;
   object-fit: cover;
+}
+.project-image {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0;
 }
