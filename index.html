@@ -14,14 +14,81 @@
   </script><link rel="icon" href="/path-k-favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/path-k-logo.png">
   
-    <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BNK36YVZFD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-BNK36YVZFD');
-  </script>
+<!-- Cookie Consent knihovna -->
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<script>
+  window.addEventListener("load", function () {
+    window.cookieconsent.initialise({
+      palette: {
+        popup: { background: "#000" },
+        button: { background: "#f1d600" }
+      },
+      theme: "classic",
+      type: "opt-in",
+      content: {
+        message: "We use cookies to provide you with the best experience. By clicking 'Accept all', you allow us to use analytics and marketing cookies to improve the site and show you relevant content.",
+        allow: "Accept all",
+        deny: "Only necessary",
+        link: "Customize",
+        href: "./cookies.html"
+      },
+      elements: {
+        allow: '<button aria-label="allow cookies" class="cc-btn cc-allow">{{allow}}</button>',
+        deny: '<button aria-label="deny cookies" class="cc-btn cc-deny">{{deny}}</button>',
+        link: '<a aria-label="learn more about cookies" class="cc-link" href="{{href}}" target="_blank">{{link}}</a>'
+      },
+      categories: {
+        necessary: {
+          needed: true,
+          wanted: true,
+          readonly: true
+        },
+        analytics: {
+          needed: false,
+          wanted: false,
+          readonly: false
+        },
+        marketing: {
+          needed: false,
+          wanted: false,
+          readonly: false
+        }
+      },
+      onInitialise: function (status) {
+        if (this.hasConsented('analytics') || this.hasConsented('marketing')) {
+          loadAnalytics();
+        }
+      },
+      onStatusChange: function (status, chosenBefore) {
+        if (this.hasConsented('analytics') || this.hasConsented('marketing')) {
+          loadAnalytics();
+        }
+      }
+    });
+  });
+
+  function loadAnalytics() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-BNK36YVZFD";
+    document.head.appendChild(script);
+
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-BNK36YVZFD', {
+        anonymize_ip: false,
+        allow_google_signals: true
+      });
+    };
+  }
+</script>
+
+<!-- next -->
+
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
