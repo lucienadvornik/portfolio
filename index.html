@@ -15,59 +15,72 @@
   <link rel="apple-touch-icon" href="/path-k-logo.png">
   
 <!-- Cookie Consent knihovna -->
-<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-
 <script>
-  window.addEventListener("load", function () {
-    window.cookieconsent.initialise({
-      palette: {
-        popup: { background: "#000" },
-        button: { background: "#f1d600" }
-      },
-      theme: "classic",
-      type: "opt-in",
-      content: {
-        message: "We use cookies to provide you with the best experience. By clicking 'Accept all', you allow us to use analytics and marketing cookies to improve the site and show you relevant content.",
-        allow: "Accept all",
-        deny: "Only necessary",
-        link: "Customize",
-        href: "./cookies.html"
-      },
-      elements: {
-        allow: '<button aria-label="allow cookies" class="cc-btn cc-allow">{{allow}}</button>',
-        deny: '<button aria-label="deny cookies" class="cc-btn cc-deny">{{deny}}</button>',
-        link: '<a aria-label="learn more about cookies" class="cc-link" href="{{href}}" target="_blank">{{link}}</a>'
-      },
-      categories: {
-        necessary: {
-          needed: true,
-          wanted: true,
-          readonly: true
+  var klaroConfig = {
+    version: 1,
+    elementID: 'cookieConsent',
+    storageMethod: 'cookie',
+    htmlTexts: true,
+    embedded: false,
+    groupByPurpose: true,
+    cookieName: 'klaro-consent',
+    default: false,
+    mustConsent: true,
+    acceptAll: true,
+    hideDeclineAll: false,
+    noticeAsModal: true,
+
+    translations: {
+      en: {
+        consentModal: {
+          title: 'Privacy Settings',
+          description: 'We use cookies to provide basic functionality and to improve your experience. You can choose which categories to allow. Your settings can be changed anytime.',
         },
-        analytics: {
-          needed: false,
-          wanted: false,
-          readonly: false
+        consentNotice: {
+          description: 'We use cookies to improve your experience. You can adjust your settings.',
+          learnMore: 'Customize',
+          learnMoreLink: '/cookies.html',
         },
-        marketing: {
-          needed: false,
-          wanted: false,
-          readonly: false
+        purposes: {
+          necessary: 'Necessary',
+          analytics: 'Analytics',
+          marketing: 'Marketing'
+        },
+        ok: 'Accept all',
+        acceptSelected: 'Save settings',
+        decline: 'Decline all'
+      }
+    },
+
+    services: [
+      {
+        name: 'necessary',
+        title: 'Necessary Cookies',
+        purposes: ['necessary'],
+        required: true
+      },
+      {
+        name: 'google-analytics',
+        title: 'Google Analytics',
+        default: false,
+        purposes: ['analytics'],
+        cookies: [/^_ga/, /^_gid/],
+        callback: function(consent) {
+          if (consent) loadAnalytics();
         }
       },
-      onInitialise: function (status) {
-        if (this.hasConsented('analytics') || this.hasConsented('marketing')) {
-          loadAnalytics();
-        }
-      },
-      onStatusChange: function (status, chosenBefore) {
-        if (this.hasConsented('analytics') || this.hasConsented('marketing')) {
-          loadAnalytics();
+      {
+        name: 'google-ads',
+        title: 'Google Ads / Remarketing',
+        default: false,
+        purposes: ['marketing'],
+        cookies: [/^_gads/, /^_gcl/],
+        callback: function(consent) {
+          if (consent) loadMarketing();
         }
       }
-    });
-  });
+    ]
+  };
 
   function loadAnalytics() {
     var script = document.createElement('script');
@@ -85,7 +98,15 @@
       });
     };
   }
+
+  function loadMarketing() {
+    // Sem můžeš přidat např. Facebook Pixel nebo remarketingové skripty
+    console.log('Marketing scripts loaded');
+  }
 </script>
+<link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7.18/klaro.min.css" />
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7.18/klaro.min.js"></script>
+
 
 <!-- next -->
 
@@ -94,9 +115,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lucie Nadvornik</title>
   <link rel="stylesheet" href="./style.css" />
+
+
+ 
 </head>
 
-<body>
+<body><div id="cookieConsent"></div>
+
 
   <!-- Header -->
   <header>
@@ -270,17 +295,8 @@
   </nav>
 </section>
 
-  
 
-
- <!-- Chart.js knihovna -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- Data Analysis & Visualization bar chart -->
 <!-- Chart.js knihovna -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- Data Analysis & Visualization bar chart bez os -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
@@ -381,13 +397,23 @@ window.addEventListener('load', () => {
     }
   </script>
 
-  
-  
+
 
   <!-- Footer -->
   <footer class="footer">
     © 2025 Lucie Nádvorník. All rights reserved.
   </footer>
+  <script>
+    window.addEventListener('load', () => {
+      if (typeof klaro !== "undefined") {
+        klaro.setup(klaroConfig);
+        klaro.show(); // ← zobrazí cookie lištu
+      } else {
+        console.error("Klaro library not loaded.");
+      }
+    });
+  </script>
+  
 </body>
 
 </html>
