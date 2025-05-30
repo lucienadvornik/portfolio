@@ -1401,3 +1401,40 @@ a.project-link {
   margin: 0;
 }
 
+/*COUNTER*/
+
+.counter-section {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.counter-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.counter-box {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+}
+
+.counter {
+  font-size: 40px;
+  font-weight: bold;
+  display: block;
+}
+
+.counter-box {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+}
+
+.counter {
+  font-size: 40px;
+  font-weight: bold;
+  display: block;
+}

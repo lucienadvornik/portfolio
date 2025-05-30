@@ -111,6 +111,7 @@
       <ul class="nav-links">
         <li></a></li><li></a></li><li></a></li>
         <li></a></li><li></a></li><li></a></li><li></a></li>
+        <li>  <a href="#about" class="btn-datasources">about</a></li>
         <li><a href="./data_sources.html" class="btn-datasources">data sources</a></li>
         <li><a href="./projects.html" class="btn-datasources">projects</a></li>
         <li>  <a href="#contact" class="btn-contact">contact</a></li>
@@ -178,9 +179,48 @@
       </div>
     </section>
   </div>
-  
+
+
+
+<!-- About Section -->
+<section class="intro" id="about">
+  <div class="section-wrapper intro-container" style="display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+    
+    <!-- Levá strana: text + počítadla -->
+    <div style="flex: 1; min-width: 300px;">
+      <p class="section-heading">About</p>
+      <p style="max-width: 600px;">
+        Over 6 years of working with data and its utilization in business. Mainly focused on
+        <strong>data engineering in AWS ecosystem.</strong>
+      </p>
+
+      <div class="counter-wrapper" style="margin-top: 30px;">
+        <div class="counter-box">
+          <span class="counter" data-target="10">0</span>
+          <p>successful<br>projects</p>
+        </div>
+        <div class="counter-box">
+          <span class="counter" data-target="6">0</span>
+          <p>years in data<br>field</p>
+        </div>
+        <div class="counter-box">
+          <span class="counter" data-target="3">0</span>
+          <p>teaching<br>data analysis</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pravá strana: menší fotka -->
+    <div class="intro-photo" style="flex: 1; text-align: center; min-width: 300px;">
+      <img src="../assets/lucienadvornik.jpg" alt="Lucie Nádvorník" style="max-width: 70%; height: auto; border-radius: 16px;" />
+    </div>
+
+  </div>
+</section>
+
+   
 <!-- Certifications -->
-<section class="trusted-gradient" style="margin-top: 120px;">
+<section class="trusted-gradient" style="margin-top: 0px;">
   <div class="section-wrapper">
     <p class="section-heading">Certified by</p>
     <div class="certifications">
@@ -403,6 +443,45 @@ window.addEventListener('load', () => {
       }
     });
   </script>
+  
+<!-- Counter Animation Script -->
+<script>
+  function animateCounter(el, target) {
+    let count = 0;
+    const increment = target / 100;
+    const updateCounter = () => {
+      count += increment;
+      if (count < target) {
+        el.textContent = Math.ceil(count);
+        requestAnimationFrame(updateCounter);
+      } else {
+        el.textContent = target;
+      }
+    };
+    updateCounter();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".counter");
+    let started = false;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !started) {
+          counters.forEach(counter => {
+            const target = +counter.getAttribute("data-target");
+            animateCounter(counter, target);
+          });
+          started = true;
+        }
+      });
+    }, { threshold: 0.4 });
+
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) observer.observe(aboutSection);
+  });
+</script>
+
   
 </body>
 
