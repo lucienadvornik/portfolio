@@ -116,16 +116,20 @@
       <a href="https://lucienadvornik.com/">
         <img src="../assets/lucienadvornik2.png" alt="logo-lucie" class="logo" />
       </a>
-      <ul class="nav-links">
-        <li></a></li><li></a></li><li></a></li>
-        <li></a></li><li></a></li><li></a></li><li></a></li>
-        <li>  <a href="#about" class="btn-datasources">about</a></li>
+  
+      <!-- BURGER BUTTON -->
+      <div class="burger" onclick="toggleMenu()">☰</div>
+  
+      <!-- MENU LINKS -->
+      <ul class="nav-links" id="navMenu">
+        <li><a href="#about" class="btn-datasources">about</a></li>
         <li><a href="./data_sources.html" class="btn-datasources">data sources</a></li>
         <li><a href="./projects.html" class="btn-datasources">projects</a></li>
-        <li>  <a href="#contact" class="btn-contact">contact</a></li>
+        <li><a href="#contact" class="btn-contact">contact</a></li>
       </ul>
     </nav>
   </header>
+  
 
 <!-- Main content -->
 <section class="intro">
@@ -488,6 +492,14 @@ window.addEventListener('load', () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) observer.observe(aboutSection);
   });
+</script>
+
+<!-- Mobile toggleMenu-->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("show");
+  }
 </script>
 
   
