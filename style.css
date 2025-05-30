@@ -67,6 +67,11 @@ p {
   line-height: 1.6;
 }
 
+#about {
+  scroll-margin-top: -90px; 
+}
+
+
 /* ----------------------------------------------
    NAVIGAČNÍ BAR A ODKAZY
 ---------------------------------------------- */
@@ -1542,3 +1547,5 @@ a.project-link {
     display: none !important;
   }
 }
+
+
