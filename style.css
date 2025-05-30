@@ -1395,4 +1395,9 @@ a.project-link {
   font-size: 0.85em;
   color: #003366;
 }
+.projects-page {
+  background: linear-gradient(to bottom, #fffff, #1c8df0); /* nebo tvoje barvy */
+  min-height: 160vh;
+  margin: 0;
+}
 
