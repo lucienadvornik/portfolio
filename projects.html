@@ -2,96 +2,125 @@
 <html lang="en">
 
 <head>
-    <!-- Logo -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Tvoje Firma",
-  "url": "https://www.lucienadvornik.com",
-  "logo": "https://www.lucienadvornik.cz/assets/lucienadvornik-logo.png"
-}
-</script><link rel="icon" href="/path-k-favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="/path-k-logo.png">
-
-  <!-- Google Analytics -->
- <!-- Cookie Consent knihovna -->
-<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-
-<script>
-  window.addEventListener("load", function () {
-    window.cookieconsent.initialise({
-      palette: {
-        popup: { background: "#000" },
-        button: { background: "#FFFFF" }
-      },
-      theme: "classic",
-      type: "opt-in",
-      content: {
-        message: "We use cookies to provide you with the best experience. By clicking 'Accept all', you allow us to use analytics and marketing cookies to improve the site and show you relevant content.",
-        allow: "Accept all",
-        deny: "Only necessary",
-        link: "Customize",
-        href: "./cookies.html"
-      },
-      elements: {
-        allow: '<button aria-label="allow cookies" class="cc-btn cc-allow">{{allow}}</button>',
-        deny: '<button aria-label="deny cookies" class="cc-btn cc-deny">{{deny}}</button>',
-        link: '<a aria-label="learn more about cookies" class="cc-link" href="{{href}}" target="_blank">{{link}}</a>'
-      },
-      categories: {
-        necessary: {
-          needed: true,
-          wanted: true,
-          readonly: true
-        },
-        analytics: {
-          needed: false,
-          wanted: false,
-          readonly: false
-        },
-        marketing: {
-          needed: false,
-          wanted: false,
-          readonly: false
-        }
-      },
-      onInitialise: function (status) {
-        if (this.hasConsented('analytics') || this.hasConsented('marketing')) {
-          loadAnalytics();
-        }
-      },
-      onStatusChange: function (status, chosenBefore) {
-        if (this.hasConsented('analytics') || this.hasConsented('marketing')) {
-          loadAnalytics();
-        }
-      }
-    });
-  });
-
-  function loadAnalytics() {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-BNK36YVZFD";
-    document.head.appendChild(script);
-
-    script.onload = function () {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-BNK36YVZFD', {
-        anonymize_ip: false,
-        allow_google_signals: true
-      });
-    };
-  }
-</script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lucie Nadvornik</title>
+  <title>Lucie Nádvorník</title>
   <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="/path-k-favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/path-k-logo.png">
+
+  <!-- Logo strukturovaná data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tvoje Firma",
+    "url": "https://www.lucienadvornik.com",
+    "logo": "https://www.lucienadvornik.cz/assets/lucienadvornik-logo.png"
+  }
+  </script>
+
+  <!-- Cookie Consent knihovna -->
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+  <script>
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        palette: {
+          popup: { background: "#000" },
+          button: { background: "#FFFFF" }
+        },
+        theme: "classic",
+        type: "opt-in",
+        content: {
+          message: "We use cookies to provide you with the best experience. By clicking 'Accept all', you allow us to use analytics and marketing cookies to improve the site and show you relevant content.",
+          allow: "Accept all",
+          deny: "Only necessary",
+          link: "Customize",
+          href: "./cookies.html"
+        },
+        elements: {
+          allow: '<button aria-label="allow cookies" class="cc-btn cc-allow">{{allow}}</button>',
+          deny: '<button aria-label="deny cookies" class="cc-btn cc-deny">{{deny}}</button>',
+          link: '<a aria-label="learn more about cookies" class="cc-link" href="{{href}}" target="_blank">{{link}}</a>'
+        },
+        categories: {
+          necessary: {
+            needed: true,
+            wanted: true,
+            readonly: true
+          },
+          analytics: {
+            needed: false,
+            wanted: false,
+            readonly: false
+          },
+          marketing: {
+            needed: false,
+            wanted: false,
+            readonly: false
+          }
+        },
+        onInitialise: function (status) {
+          if (this.hasConsented('analytics') || this.hasConsented('marketing')) {
+            loadAnalytics();
+          }
+        },
+        onStatusChange: function (status, chosenBefore) {
+          if (this.hasConsented('analytics') || this.hasConsented('marketing')) {
+            loadAnalytics();
+          }
+        }
+      });
+    });
+
+    function loadAnalytics() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-BNK36YVZFD";
+      document.head.appendChild(script);
+
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BNK36YVZFD', {
+          anonymize_ip: false,
+          allow_google_signals: true
+        });
+      };
+    }
+  </script>
+
+  <!-- Styl filtru (glassmorphism) -->
+  <style>
+    .filter-buttons {
+      margin: 20px 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 18px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      color: black;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active {
+      background: rgba(255, 255, 255, 0.3);
+      border: 2px solid black;
+      color: black;
+    }
+  </style>
 </head>
 
 <body>
@@ -103,60 +132,93 @@
         <img src="../assets/lucienadvornik2.png" alt="logo-lucie" class="logo" />
       </a>
       <ul class="nav-links">
-        <li></a></li><li></a></li><li></a></li>
-        <li></a></li><li></a></li><li></a></li><li></a></li>
         <li><a href="./index.html" class="btn-datasources">home</a></li>
         <li><a href="./data_sources.html" class="btn-datasources">data sources</a></li>
-    <li>  <a href="index.html#contact" class="btn-contact">contact</a></li>
+        <li><a href="index.html#contact" class="btn-contact">contact</a></li>
       </ul>
     </nav>
   </header>
 
-<!-- Main content -->
-<section class="intro">
+  <!-- Main content -->
+  <section class="intro">
     <div class="section-wrapper">
       <div class="intro-text">
         <h1>Projects</h1>
       </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterProjects('all', event)">All</button>
+        <button class="filter-btn" onclick="filterProjects('aws', event)">AWS</button>
+        <button class="filter-btn" onclick="filterProjects('ibm', event)">IBM</button>
+      </div>
     </div>
   </section>
-  
-<!-- Projects Section -->
-<section class="projects">
-  <div class="section-wrapper">
-    <div class="tiles-grid">
 
-     <!-- Project Tile -->
-     <a href="https://github.com/lucienadvornik/ouraring_de_project/" target="_blank" class="project-link">
-      <div class="project-tile">
-        <img src="./assets/architecture01.png" alt="Project architecture" class="project-image" />
-        <h3>Sleep Insights Notifications</h3>
-        <p class="small-note">This solution provides personalised daily email notifications based on your own sleep data.</p>
-        <div class="tech-stack">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">AWS Lambda</span>
-          <span class="tech-tag">Amazon S3</span>
-          <span class="tech-tag">AWS Glue</span>
-          <span class="tech-tag">Amazon Redshift</span>
-          <span class="tech-tag">Amazon SNS</span>
-          <span class="tech-tag">Amazon EventBridge</span>
-        </div>
+  <!-- Projects Section -->
+  <section class="projects">
+    <div class="section-wrapper">
+      <div class="tiles-grid">
+
+        <!-- Project Tile AWS -->
+        <a href="https://github.com/lucienadvornik/ouraring_de_project/" target="_blank" class="project-link" data-category="aws">
+          <div class="project-tile">
+            <img src="./assets/architecture01.png" alt="Project architecture" class="project-image" />
+            <h3>Sleep Insights Notifications</h3>
+            <p class="small-note">This solution provides personalised daily email notifications based on your own sleep data.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">AWS Lambda</span>
+              <span class="tech-tag">Amazon S3</span>
+              <span class="tech-tag">AWS Glue</span>
+              <span class="tech-tag">Amazon Redshift</span>
+              <span class="tech-tag">Amazon SNS</span>
+              <span class="tech-tag">Amazon EventBridge</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project Tile AWS -->
+        <a href="https://github.com/lucienadvornik/aws-data-engineering/blob/main/yaml/CloudFormation%20template%3A%20S3_conditional_deployment.yaml" target="_blank" class="project-link" data-category="aws">
+          <div class="project-tile">
+            <img src="./assets/s3_conditional_deployment.png" alt="Project architecture" class="project-image" />
+            <h3>S3 Conditional Deployment</h3>
+            <p class="small-note">Simple CF template for S3 buckets creation and conditional deployment.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">CloudFormation</span>
+              <span class="tech-tag">Amazon S3</span>
+            </div>
+          </div>
+        </a>
+
       </div>
-    </a>
-    
-      
-
-
-
-      <!-- Další dlaždice můžeš přidat ve stejném formátu -->
-
     </div>
-  </div>
-</section>
+  </section>
 
-</body> 
-<!-- Footer -->
-<footer class="footer">
-  © 2025 Lucie Nádvorník. All rights reserved.
-</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Lucie Nádvorník. All rights reserved.
+  </footer>
+
+  <!-- Filter Script -->
+  <script>
+    function filterProjects(category, event) {
+      const projects = document.querySelectorAll('.project-link');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      projects.forEach(project => {
+        const projectCategory = project.getAttribute('data-category');
+        if (category === 'all' || projectCategory === category) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
 </html>

@@ -1,161 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Head section -->
 <head>
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BNK36YVZFD"></script>
-      <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Logo -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tvoje Firma",
+    "url": "https://www.lucienadvornik.com",
+    "logo": "https://www.lucienadvornik.cz/assets/lucienadvornik-logo.png"
+  }
+  </script><link rel="icon" href="/path-k-favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/path-k-logo.png">
   
-      gtag('config', 'G-BNK36YVZFD');
-      </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucie Nadvornik</title>
-    <link rel="stylesheet" href="./style.css">
+<!-- Cookie Consent knihovna -->
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<script>
+  window.addEventListener("load", function () {
+    window.cookieconsent.initialise({
+      palette: {
+        popup: { background: "#000" },
+        button: { background: "#FFFFF" }
+      },
+      theme: "classic",
+      type: "opt-in",
+      content: {
+        message: "We use cookies to provide you with the best experience. By clicking 'Accept all', you allow us to use analytics and marketing cookies to improve the site and show you relevant content.",
+        allow: "Accept all",
+        deny: "Only necessary",
+        link: "More info",
+        href: "./cookies.html"
+      },
+      elements: {
+        allow: '<button aria-label="allow cookies" class="cc-btn cc-allow">{{allow}}</button>',
+        deny: '<button aria-label="deny cookies" class="cc-btn cc-deny">{{deny}}</button>',
+        link: '<a aria-label="learn more about cookies" class="cc-link" href="{{href}}" target="_blank">{{link}}</a>'
+      },
+      categories: {
+        necessary: {
+          needed: true,
+          wanted: true,
+          readonly: true
+        },
+        analytics: {
+          needed: false,
+          wanted: false,
+          readonly: false
+        },
+        marketing: {
+          needed: false,
+          wanted: false,
+          readonly: false
+        }
+      },
+      onInitialise: function (status) {
+        if (this.hasConsented('analytics') || this.hasConsented('marketing')) {
+          loadAnalytics();
+        }
+      },
+      onStatusChange: function (status, chosenBefore) {
+        if (this.hasConsented('analytics') || this.hasConsented('marketing')) {
+          loadAnalytics();
+        }
+      }
+    });
+  });
+
+  function loadAnalytics() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-BNK36YVZFD";
+    document.head.appendChild(script);
+
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-BNK36YVZFD', {
+        anonymize_ip: false,
+        allow_google_signals: true
+      });
+    };
+  }
+</script>
+
+<!-- next -->
+
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucie Nadvornik</title>
+  <link rel="stylesheet" href="./style.css" />
+
+
+ 
 </head>
 
-<!-- Body section -->
-<body>
-  <!-- Menu -->
+<body><div id="cookieConsent"></div>
+
+
+  <!-- Header -->
   <header>
     <nav class="navbar">
-      <a href="https://lucienadvornik.com/"><img src="../assets/lucienadvornik.png" alt="logo-lucie" class="logo"></a>
+      <a href="https://lucienadvornik.com/">
+        <img src="../assets/lucienadvornik2.png" alt="logo-lucie" class="logo" />
+      </a>
       <ul class="nav-links">
-        <li><a href="./index.html">about</a></li>
-       
-        <li><a href="./data_sources.html">data sources</a></li>
+        <li></a></li><li></a></li><li></a></li>
+        <li></a></li><li></a></li><li></a></li><li></a></li>
+        <li><a href="./data_sources.html" class="btn-datasources">data sources</a></li>
+        <li><a href="./projects.html" class="btn-datasources">projects</a></li>
+        <li>  <a href="#contact" class="btn-contact">contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main content -->
-  <section class="intro">
-    <div class="intro-container">
+<!-- Main content -->
+<section class="intro">
+    <div class="section-wrapper intro-container">
+      
       <!-- Levá strana: text -->
       <div class="intro-text">
-        <h1>Hi, I'm <br>LUCIE NADVORNIK</h1>
-        <h2>DATA ENGINEER</h2>
-        <p>
-        </p>
+        <h3>Hi, I'm Lucie Nadvornik</h3>
+        <h1>DATA ENGINEER</h1>
+        <p>SUPPORTING COMPANIES FROM RAW DATA TO BUSINESS INSIGHTS</p>
       </div>
   
       <!-- Pravá strana: Přepínatelné okno s kódem -->
       <div class="intro-code">
-        <div class="code-tabs">
-          <div class="tab-buttons">
-            <button onclick="showTab('sql')" class="active">SQL</button>
-            <button onclick="showTab('python')">Python</button>
-          </div>
-          <div class="code-content-wrapper">
-            <div id="sql" class="code-content active">
-  SELECT data_engineer
-  FROM all
-  WHERE cloud = 'AWS' 
-  ORDER BY results DESC;
-            </div>
-            <div id="python" class="code-content">
-  import pandas as pd
+        <img src="../assets/lucienadvornik.jpg" alt="Lucie Nádvorník" height="300" />
+      </div>
+      
+    </div>
+  </section>
   
-  df = pd.read_csv("all.csv")  
-  data_engineers = df[df['cloud'] == 'AWS']
-  data_engineers_sorted = data_engineers.sort_values(by='results', ascending=False)
-  result = data_engineers_sorted[['data_engineer']]
+
+<!--  Work experience section -->
+<section class="trusted-gradient">
+    <div class="section-wrapper">
+      <p class="section-heading">Trusted by companies like</p>
+      <div class="companies">
+        <img src="../assets/logo-ibm.png"class="logo-invert" alt="IBM" height="100" />
+        <img src="../assets/logo-amazon.png" class="logo-invert" alt="Amazon" height="100" />
+        <img src="../assets/logo-avast.png"class="logo-invert" alt="Avast" height="100" />
+        <img src="../assets/logo-o2.png" class="logo-invert"alt="O2" height="100" />
+      </div>
+    </section>
+  </div>
   
-  print(result)
-            </div>
+<!-- Certifications -->
+<section class="trusted-gradient" style="margin-top: 120px;">
+  <div class="section-wrapper">
+    <p class="section-heading">Certified by</p>
+    <div class="certifications">
+      <a href="https://www.credly.com/badges/7ecec090-188c-4bb8-8fcb-c2dd84a975b1/public_url" target="_blank" rel="noopener noreferrer">
+        <img src="../assets/aws_practitioner.png" alt="AWS Certification Badge" />
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  
+<!-- Services section -->
+<section class="services-aligned">
+    <div class="section-wrapper">
+      
+      <p class="section-heading">I can help you with</p>
+  
+      <div class="services-container">
+        <div class="services-right">
+  
+          <div class="service-block">
+            <a href="" class="link-block">
+              <div class="link-title">
+                <strong>Data Analysis & Visualization</strong> <!-- <span class="arrow">→</span>-->
+              </div>
+            </a>
+            <p>Turning raw data into insightful dashboards and reports.</p>
           </div>
+  
+          <div class="service-block">
+            <a href="" class="link-block">
+              <div class="link-title">
+                <strong>Data Engineering</strong> <!-- <span class="arrow">→</span>-->
+              </div>
+            </a>
+            <p>Designing scalable data pipelines and automating data workflows.</p>
+          </div>
+  
+          <div class="service-block">
+            <a href="" class="link-block">
+              <div class="link-title">
+                <strong>Data Lectures</strong> <!-- <span class="arrow">→</span>-->
+              </div>
+            </a>
+            <p>Delivering clear and practical training sessions in data analytics.</p>
+          </div>
+  
         </div>
       </div>
+  
     </div>
   </section>
   
   
-  <!-- 💡 Styl přepínače -->
-  <style>
-    .code-tabs {
-      margin: 2rem 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      overflow: hidden;
-      font-family: monospace;
-    }
   
-    .tab-buttons {
-      display: flex;
-      background: #f3f3f3;
-    }
   
-    .tab-buttons button {
-      flex: 1;
-      padding: 10px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
   
-    .tab-buttons button.active {
-      background: #ddd;
-    }
   
-    .code-content {
-      padding: 1rem;
-      background: #272822;
-      color: #f8f8f2;
-      display: none;
-      white-space: pre-wrap;
-      font-size: 14px;
-    }
   
-    .code-content.active {
-      display: block;
-    }
-  </style>
   
 
-  
-  <!--  JavaScript pro přepínání -->
-  <script>
+<!--  Contact section -->
+<section class="footer" id="contact">
+    <div class="section-wrapper">
+      <p class="section-heading">Contact</p>
+      <h2>Want to work with me? — Ping me!</h2>
+      <nav class="social-links">
+    <!-- GitHub -->
+    <a href="https://www.github.com/lucienadvornik" target="_blank" aria-label="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 24 24">
+        <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 
+          0-.27-.01-1.17-.01-2.12-3.2.7-3.88-1.54-3.88-1.54-.53-1.35-1.3-1.71-1.3-1.71-1.06-.73.08-.72.08-.72 
+          1.17.08 1.78 1.21 1.78 1.21 1.04 1.77 2.74 1.26 3.41.96.11-.76.41-1.26.74-1.55-2.56-.29-5.26-1.28-5.26-5.71 
+          0-1.26.45-2.3 1.19-3.12-.12-.29-.52-1.45.11-3.01 0 0 .97-.31 3.18 1.19a11.1 11.1 0 0 1 5.8 0C17.9 4.45 
+          18.87 4.76 18.87 4.76c.63 1.56.23 2.72.11 3.01.74.82 1.19 1.86 1.19 3.12 0 4.44-2.7 5.41-5.27 5.7.42.36.79 
+          1.08.79 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.21.66.8.55A10.51 10.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
+      </svg>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/lucienadvornik/" target="_blank" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 24 24">
+        <path d="M20.45 20.45h-3.56v-5.54c0-1.32-.03-3.01-1.84-3.01-1.85 
+          0-2.14 1.44-2.14 2.92v5.63H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.84 3.38-1.84 
+          3.62 0 4.29 2.38 4.29 5.48v6.25zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 
+          2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.23 
+          0H1.77C.8 0 0 .77 0 1.72v20.55C0 23.23.8 24 1.77 
+          24h20.46C23.2 24 24 23.23 24 22.27V1.72C24 .77 23.2 0 22.23 0z"/>
+      </svg>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:lucie.nadvornik@outlook.com" aria-label="Email">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 
+          2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
+          4-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+
+  </nav>
+</section>
+
+
+<!-- Chart.js knihovna -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('dataChart').getContext('2d');
+
+const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+const lineData = [120, 190, 140, 230, 180, 270];
+const barData = [100, 160, 130, 210, 170, 240];
+
+// Začínáme s prázdnými daty (null = nezobrazovat)
+let displayedPoints = 0;
+
+const config = {
+  type: 'bar', // základní typ bar, ale dataset line se vykreslí taky
+  data: {
+    labels: labels,
+    datasets: [
+      {
+        type: 'line',
+        label: 'Line',
+        data: Array(lineData.length).fill(null),
+        borderColor: '#bc8fe2',
+        borderWidth: 3,
+        fill: false,
+        tension: 0.3,
+        pointRadius: 3,
+        order: 2 // vykreslí se nad bary
+      },
+      {
+        type: 'bar',
+        label: 'Bars',
+        data: Array(barData.length).fill(null),
+        backgroundColor: '#89bcd8',
+        borderRadius: 4,
+        maxBarThickness: 25,
+        order: 1 // vykreslí se pod linkou
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        display: false,
+        grid: { display: false },
+        ticks: { color: 'white' }
+      },
+      y: {
+        display: false,
+        min: 0,
+        max: 300,
+        grid: { color: 'rgba(255,255,255,0.1)' },
+        ticks: { color: 'white' }
+      }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: false }
+    },
+    animation: {
+      duration: 0 // animaci vypneme, animujeme manuálně
+    }
+  }
+};
+
+const dataChart = new Chart(ctx, config);
+
+// Animace postupného odhalování dat (bary i linky)
+function animateChart() {
+  if (displayedPoints < lineData.length) {
+    dataChart.data.datasets[0].data[displayedPoints] = lineData[displayedPoints]; // line
+    dataChart.data.datasets[1].data[displayedPoints] = barData[displayedPoints]; // bar
+    displayedPoints++;
+    dataChart.update();
+    setTimeout(animateChart, 300);
+  }
+}
+
+window.addEventListener('load', () => {
+  animateChart();
+});
+
+</script>
+
+<script>
     function showTab(tabName) {
       const buttons = document.querySelectorAll('.tab-buttons button');
       const contents = document.querySelectorAll('.code-content');
   
+      // Zrušíme aktivní třídy
       buttons.forEach(btn => btn.classList.remove('active'));
-      contents.forEach(el => el.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
   
+      // Aktivujeme vybraný tab a tlačítko
       document.querySelector(`.tab-buttons button[onclick*="${tabName}"]`).classList.add('active');
       document.getElementById(tabName).classList.add('active');
     }
   </script>
-  
-  </br></br></br></br></br></br></br></br></br></br></br>
-  
-  <!-- Work experience section -->
-  <section class="headlines">
-    <h2>Trusted by companies like</h2>
-    <div class="companies">
-      <img src="../assets/logo-ibm.png" alt="IBM" height="100">
-      <img src="../assets/logo-amazon.png" alt="Amazon" height="100">
-      <img src="../assets/logo-avast.png" alt="Avast" height="100">
-      <img src="../assets/logo-o2.png" alt="O2" height="100">
-    </div>
-  </section></br></br></br></br>
-</br></br></br></br></br></br></br></br>
-  <!-- Footer -->
-  <footer>
-    <h2>Want to work with me? — Ping me!</h2>
-    <nav class="social-links">
-      <a href="https://www.github.com/lucienadvornik"><img src="../assets/logo-git.png" alt="GitHub" height="35"></a>
-      <a href="https://www.linkedin.com/in/lucienadvornik/"><img src="../assets/logo-li.png" alt="LinkedIn" height="35"></a>
-      <a href="mailto:lucie.nadvornik@outlook.com"><img src="../assets/logo-email.png" alt="Email" height="35"></a>
-      <a href="https://www.instagram.com/lucienadvornik/"><img src="../assets/logo-ig.png" alt="Instagram" height="35"></a>
-    </br></br></br></br></br></br></br>
-    </nav>
-  </footer>
 
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Lucie Nádvorník. All rights reserved.
+  </footer>
+  <script>
+    window.addEventListener('load', () => {
+      if (typeof klaro !== "undefined") {
+        klaro.setup(klaroConfig);
+        klaro.show(); // ← zobrazí cookie lištu
+      } else {
+        console.error("Klaro library not loaded.");
+      }
+    });
+  </script>
+  
 </body>
+
 </html>
