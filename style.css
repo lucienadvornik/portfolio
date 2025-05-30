@@ -1520,3 +1520,25 @@ a.project-link {
     margin: 0;
   }
 }
+
+
+.burger {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+  background: none;
+  border: none;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .burger {
+    display: none !important;
+  }
+}
