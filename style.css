@@ -17,6 +17,7 @@ html {
 
 body {
   font-family: 'PP Neue Montreal', sans-serif;
+  background-image: url('assets/background2.png');
   background-size: cover;
   background-position: center 100px;
   background-repeat: no-repeat;
