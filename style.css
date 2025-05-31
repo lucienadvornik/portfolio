@@ -733,7 +733,7 @@ footer {
 }
 
 .code-content .keyword {
-  color: #e88cd6;
+  color: #cccccc;
   font-weight: bold;
 }
 
@@ -742,7 +742,7 @@ footer {
 }
 
 .code-content .string {
-  color: #ce9178;
+  color: #da8969;
 }
 
 .code-content .function {
@@ -1549,3 +1549,32 @@ a.project-link {
 }
 
 
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: rem;
+}
+
+.service-block {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-block:hover {
+  transform: translateY(-5px);
+}
+
+.link-title strong {
+  font-size: 1.2rem;
+}
+
+.service-block p {
+  font-size: 1.05rem;      
+  margin-top: 1rem;       
+  line-height: 1.6;        
+  color: #666;           
+}
