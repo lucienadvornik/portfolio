@@ -89,7 +89,7 @@ p {
 }
 
 .nav-links li {
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
 .nav-links a {
@@ -622,9 +622,12 @@ footer {
 .footer {
   text-align: center;
   padding: 60px 0;
+  padding-bottom: 20px;
   /* background-color: #000;
   color: #777;*/
 }
+
+
 
 .btn-contact {
   display: inline-block;
@@ -1578,3 +1581,58 @@ a.project-link {
   line-height: 1.6;        
   color: #666;           
 }
+
+/*add section - content*/
+.info-section {
+  background-color: transparent; /* průhledné pozadí */
+  border-top: 1px solid #ddd;    /* tenká šedá linka nahoře */
+  padding: 4rem 1rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.info-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.info-columns {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.info-column h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.info-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.info-column ul li a {
+  color: #444;
+  text-decoration: none;
+}
+
+.info-column ul li a:hover {
+  text-decoration: underline;
+}
+#contact {
+  margin-bottom:108px;
+}
+#certifications {
+  scroll-margin-top: 80px; 
