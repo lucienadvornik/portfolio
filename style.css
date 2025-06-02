@@ -823,6 +823,8 @@ footer {
 
 .services-aligned {
   padding: 60px 0;
+  background-image: url('../assets/layers2.png');
+
 }
 
 .services-container {
@@ -942,7 +944,7 @@ footer {
   align-items: center;
   gap: 8px;
   transition: transform 0.3s ease;
-  color: #000;
+  color: #ededed;
 }
 
 .link-block:hover .arrow {
@@ -1279,17 +1281,16 @@ a.project-link {
 }
 
 .filter-btn {
-  padding: 10px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: black;
-  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
   cursor: pointer;
+  font-weight: bold;
+  color: white; /* ← změna zde */
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .filter-btn:hover {
@@ -1299,7 +1300,7 @@ a.project-link {
 .filter-btn.active {
   background: rgba(255, 255, 255, 0.3);
   border: 2px solid black;
-  color: black;
+  color: white; 
 }
 
 
@@ -1643,5 +1644,22 @@ a.project-link {
    fill: #2af9e1; /* barva při najetí – např. světle modrá */
 }
   
+.glass {
+  background: rgba(255, 255, 255, 0.1); /* nebo 0.2 pro více bílé */
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* pro Safari */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
 
 
+
+.filter-btn {
+  color: #dfdfdf !important;
+}
+
+.filter-btn.active {
+  color: white !important;
+}
