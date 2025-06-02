@@ -146,42 +146,17 @@
         <h2>SUPPORTING COMPANIES FROM RAW DATA TO BUSINESS INSIGHTS</h2>
       </div>
   
-      <!-- Pravá strana: Přepínatelné okno s kódem -->
+      <!-- Pravá strana -->
       <div class="intro-code">
-        <div class="code-tabs" id="codeBlock">
-          
-          <!-- Tlačítka tabů -->
-          <div class="tab-buttons">
-            <button onclick="showTab('sql')" class="active">SQL</button>
-            <button onclick="showTab('python')">Python</button>
-          </div>
-  
-          <!-- Obsah kódu -->
-          <div class="code-content-wrapper">
-            <!-- SQL -->
-            <pre id="sql" class="code-content active"><code>
-  <span class="keyword">SELECT</span> <span class="var">data_engineer</span>
-  <span class="keyword">FROM</span> <span class="var">all</span>
-  <span class="keyword">WHERE</span> <span class="var">cloud</span> = <span class="string">'AWS'</span>
-  <span class="keyword">ORDER BY</span> <span class="var">results</span> <span class="keyword">DESC</span>;
-            </code></pre>
-  
-            <!-- Python -->
-            <pre id="python" class="code-content"><code>
-  <span class="keyword">import</span> <span class="var">pandas</span> <span class="keyword">as</span> <span class="var">pd</span>
-  <span class="var">df</span> = pd.read_csv(<span class="string">"all.csv"</span>)
-  <span class="var">data_engineers</span> = df[df[<span class="string">'cloud'</span>] == <span class="string">'AWS'</span>]
-  <span class="var">data_engineers_sorted</span> = data_engineers.sort_values(by=<span class="string">'results'</span>, ascending=<span class="bool">False</span>)
-  <span class="var">result</span> = data_engineers_sorted[[<span class="string">'data_engineer'</span>]]
-  <span class="function">print</span>(<span class="var">result</span>)
-            </code></pre>
-          </div>
+        <div class="code-image-wrapper">
+          <img src="../assets/aws_data.png" alt="AWS Data" style="max-width: 100%; height: auto; border-radius: 8px;">
         </div>
       </div>
-      
-    </div>
-  </section>
-  
+
+            
+          </div>
+        </section>
+        
 
 <!--  Work experience section -->
 <section class="trusted-gradient">
