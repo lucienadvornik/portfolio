@@ -126,6 +126,7 @@
   
       <!-- MENU LINKS -->
       <ul class="nav-links" id="navMenu">
+        <li><a class="btn-datasources">based in Prague, Czechia</a></li>
         <li><a href="#about" class="btn-datasources">about</a></li>
         <li><a href="./projects.html" class="btn-datasources">projects</a></li>
         <li><a href="#contact" class="btn-contact">contact</a></li>
@@ -197,7 +198,7 @@
     <div style="flex: 1; min-width: 300px;">
       <p class="section-heading">About</p>
       <p style="max-width: 600px;">
-        Over 6 years of working with data and its utilization in business. Mainly focused on
+        Hi, I'm Lucie Nadvornik - data engineer based in Prague, Czechia. With over 6 years of working with data and its utilization in business. Mainly focused on
         <strong>data engineering in AWS ecosystem, data analysis & visualization and lecturing data analytics.</strong>
       </p>
 
@@ -255,8 +256,8 @@
               <strong>Data Analysis & Visualization</strong>
             </div>
           </a>
-          <p>Transforming raw data into meaningful insights through interactive dashboards and reports.
-            With a focus on business impact, KPI tracking, and decision support.</p>
+          <p>Transforming raw data into valuable, meaningful insights through interactive dashboards and reports. With a strong focus on business impact, KPI tracking, and effective decision support.</p></br>
+            <img src="assets/data_analysis_icon.png" alt="Icon engineering" class="service-icon" />
         </div>
 
         <div class="service-block glass" data-aos="fade-up" data-aos-delay="200">
@@ -266,8 +267,9 @@
             </div>
           </a>
           <p>Designing and building scalable, cost-effective, and automated data pipelines using AWS services.
-            Strong in end-to-end data solution delivery and infrastructure automation.</p>
-        </div>
+            Strong in end-to-end data solution delivery and infrastructure automation.</p></br>
+        <img src="assets/data_engineering_icon.png" alt="Icon engineering" class="service-icon" />
+          </div>
 
         <div class="service-block glass" data-aos="fade-up" data-aos-delay="300">
           <a href="#" class="link-block">
@@ -275,13 +277,37 @@
               <strong>Data Lectures</strong>
             </div>
           </a>
-          <p>Delivering hands-on data analytics lectures to over than 300 students. Experienced in thesis supervision, final exams, and professional training in online and offline environment.</p>
+          <p>Delivering hands-on data analytics lectures to over than 300 students. Experienced in thesis supervision, final exams, and professional training in online and offline environment.</p></br>
+        <img src="assets/data_lectures_icon.png" alt="Icon engineering" class="service-icon" />
         </div>
 
       </div>
     </div>
   </div>
 </section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="trusted-gradient">
+  <div class="section-wrapper">
+    <p class="section-heading">What Others Say About Me</p>
+
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left" onclick="moveSlide(-1)">←</button>
+
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="carousel-track">
+          <div class="testimonial-box glass">"She has been a key player in our team, consistently going the extra mile to ensure success. Her organizational skills and focus, combined with her keen attention to detail, have significantly enhanced our project outcomes."<br><strong>— A., IBM</strong></div>
+          <div class="testimonial-box glass">"Thanks to Lucie’s structured guidance and supportive materials, I was able to complete and defend my bachelor’s thesis with confidence and quality. Her approach made the entire process clearer, calmer, and much more manageable."<br><strong>— K., Newton University</strong></div>
+          <div class="testimonial-box glass">"Lucie was incredibly supportive in helping us turn our data into insights and consistently ensured we met key reporting deadlines. Her commitment was essential to our team's success and data development."<br><strong>— Former Product Owner (Client-side)</strong></div>
+          <div class="testimonial-box glass">"She is a great team player and collaborator, always eager to help and take on responsibilities. Her dedication and high-quality work have made a substantial impact, and her contributions are highly valued."<br><strong>— Former Client</strong></div>
+        </div>
+      </div>
+
+      <button class="carousel-btn right" onclick="moveSlide(1)">→</button>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -539,6 +565,60 @@ window.addEventListener('load', () => {
    });
  </script>
  
+<script>
+  const track = document.getElementById('carousel-track');
+  const originalSlides = Array.from(track.children);
+  const visibleSlides = 3;
+  let index = visibleSlides;
+
+  // Klonujeme pro loop
+  const prependClones = originalSlides.slice(-visibleSlides).map(el => el.cloneNode(true));
+  const appendClones = originalSlides.slice(0, visibleSlides).map(el => el.cloneNode(true));
+  prependClones.forEach(clone => track.prepend(clone));
+  appendClones.forEach(clone => track.append(clone));
+
+  const allSlides = Array.from(track.children);
+  const updateSlideWidth = () => allSlides[0].offsetWidth;
+
+  // Nastavení výchozí pozice
+  const setInitialPosition = () => {
+    const slideWidth = updateSlideWidth();
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${index * slideWidth + (index * 20)}px)`; // + mezera (gap)
+  };
+
+  setTimeout(setInitialPosition, 0); // počká na vykreslení
+
+  function moveSlide(direction) {
+    index += direction;
+    const slideWidth = updateSlideWidth();
+    track.style.transition = 'transform 0.5s ease';
+    track.style.transform = `translateX(-${index * slideWidth + (index * 20)}px)`;
+
+    track.addEventListener('transitionend', () => {
+      const total = originalSlides.length;
+
+      if (index >= total + visibleSlides) {
+        index = visibleSlides;
+        track.style.transition = 'none';
+        track.style.transform = `translateX(-${index * slideWidth + (index * 20)}px)`;
+      }
+
+      if (index < visibleSlides) {
+        index = total;
+        track.style.transition = 'none';
+        track.style.transform = `translateX(-${index * slideWidth + (index * 20)}px)`;
+      }
+    }, { once: true });
+  }
+
+  window.addEventListener('resize', () => {
+    setInitialPosition();
+  });
+</script>
+
+
+
 </body>
 
 </html>

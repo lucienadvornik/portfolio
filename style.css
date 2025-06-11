@@ -823,7 +823,7 @@ footer {
 
 .services-aligned {
   padding: 60px 0;
-  background-image: url('../assets/layers2.png');
+  background-image: url('../assets/.png');
 
 }
 
@@ -1662,4 +1662,105 @@ a.project-link {
 
 .filter-btn.active {
   color: white !important;
+}
+
+
+/* TESTIMONIALS */
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 30px 0;
+  max-width: 100%;
+}
+
+.carousel-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+  gap: 20px; /* mezera mezi boxy */
+  padding: 10px;
+}
+
+.testimonial-box {
+  flex: 0 0 calc((100% - 40px) / 3); /* tři boxy + mezery */
+  box-sizing: border-box;
+  padding: 24px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 16px;
+  min-height: 240px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+  padding: 10px;
+}
+.carousel-btn.left { left: 10px; }
+.carousel-btn.right { right: 10px; }
+
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+.testimonial-box {
+  flex: 0 0 calc((100% - 40px) / 3); /* 3 viditelné boxy s mezerami */
+  box-sizing: border-box;
+  padding: 24px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-radius: 16px;
+  min-height: 240px;
+  color: #969696; /* decentní světle šedá místo čistě bílé */
+}
+
+.testimonial-box p {
+  margin: 0 0 10px;
+  color: #ccc; /* hlavní text – světle šedá */
+  font-weight: 300;
+}
+
+.testimonial-box strong {
+  color: #d6d6d6;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 8px;
+}
+.carousel-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px; /* přidá vnitřní okraje */
+  margin: 0 auto; /* zarovná na střed */
+  position: relative;
+}
+.service-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 12px auto;
+  display: block;
+  filter: invert(1);
+  opacity: 0.9;
+}
+.service-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* zarovnání obsahu nahoře */
+  flex: 1 1 30%;
 }
